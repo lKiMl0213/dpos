@@ -1,6 +1,6 @@
 # DPOS Automation Toolkit
 
-A comprehensive toolkit to automate system maintenance tasks such as driver updates, Windows updates, system inventory creation, and Windows activation. Simplify deployment and streamline your workflow with these scripts...
+A comprehensive toolkit to automate system maintenance tasks such as driver updates, Windows updates, system inventory creation, and Windows activation. Simplify deployment and streamline your workflow with these scripts.
 
 ## Table of Contents
 
@@ -28,27 +28,27 @@ A comprehensive toolkit to automate system maintenance tasks such as driver upda
 ## Setup
 
 1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/dpos-automation-toolkit.git
-    cd dpos-automation-toolkit
-    ```
+  ```bash
+  git clone https://github.com/yourusername/dpos-automation-toolkit.git
+  cd dpos-automation-toolkit
+  ```
 
 2. **Prepare the Environment**:
-    - Open PowerShell as Administrator and set the execution policy:
-      ```powershell
-      Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-      ```
-    - Install required dependencies:
-      - **PSWindowsUpdate**:
-         ```powershell
-         Install-Module -Name PSWindowsUpdate -Force
-         ```
-      - **winget**: Pre-installed on most modern Windows versions.
-    - **Driver Repository**: Place driver files in the `extracted` folder in the repository root.
-    - **Network Configuration**: Update the network path in `inv.ps1` to match your inventory storage location:
-      ```powershell
-      $networkPath = "\\path\to\network"
-      ```
+  - Open PowerShell as Administrator and set the execution policy:
+    ```powershell
+    Set-ExecutionPolicy RemoteSigned -Scope Process -Force
+    ```
+  - Install required dependencies:
+    - **PSWindowsUpdate**:
+     ```powershell
+     Install-Module -Name PSWindowsUpdate -Force
+     ```
+    - **winget**: Pre-installed on most modern Windows versions.
+  - **Driver Repository**: Place driver files in the `extracted` folder in the repository root.
+  - **Network Configuration**: Update the network path in `inv.ps1` to match your inventory storage location:
+    ```powershell
+    $networkPath = "\\path\to\network"
+    ```
 
 ---
 
@@ -90,7 +90,7 @@ Ensure the respective folders are correctly set up to avoid errors during execut
 
 ## Folder Structure
 
-```
+```plaintext
 .
 ├── AioTst.bat          # All-in-One batch script
 ├── dps.ps1             # Driver update script
