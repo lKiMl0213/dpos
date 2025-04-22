@@ -1,39 +1,39 @@
-# Define o diretório base (onde o script está)
+# Define the base directory (where the script is located)
 $baseDir = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 $driverDir = Join-Path $baseDir "extracted"
 $logDir = Join-Path $baseDir "log"
 
-# Cria a pasta de log se não existir
+# Create the log folder if it doesn't exist
 if (-not (Test-Path $logDir)) {
     New-Item -ItemType Directory -Path $logDir -Force | Out-Null
 }
 
-# Gera o nome do log sem caracteres problemáticos
+# Generate the log name without problematic characters
 $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm"
 $logPath = Join-Path $logDir "LOG-$timestamp.txt"
 
-# Início do log
+# Start of the log
 "==== PROCESS START ($timestamp) ====" | Out-File -FilePath $logPath -Encoding UTF8
 
-# Verifica se a pasta de drivers existe
+# Check if the drivers folder exists
 if (-not (Test-Path $driverDir)) {
-    Write-Host "Pasta 'extracted' não encontrada em: $driverDir" -ForegroundColor Red
-    "ERRO: Pasta 'extracted' não encontrada." | Out-File -FilePath $logPath -Append
+    Write-Host "Folder 'extracted' not found at: $driverDir" -ForegroundColor Red
+    "ERROR: Folder 'extracted' not found." | Out-File -FilePath $logPath -Append
     pause
     exit
 }
 
-# Usa DISM para adicionar apenas drivers compatíveis
-Write-Host "Adicionando drivers compatíveis usando DISM..." -ForegroundColor Cyan
-"Executando DISM com a pasta: $driverDir" | Out-File -FilePath $logPath -Append
+# Use DISM to add only compatible drivers
+Write-Host "Adding compatible drivers using DISM..." -ForegroundColor Cyan
+"Running DISM with folder: $driverDir" | Out-File -FilePath $logPath -Append
 
-# Executa o DISM e envia a saída pro log
+# Execute DISM and send the output to the log
 $dismCmd = "dism /Online /Add-Driver /Driver:`"$driverDir`" /Recurse /LogPath:`"$logPath`""
 $output = cmd.exe /c $dismCmd 2>&1
 
-# Exibe e registra a saída
+# Display and log the output
 $output | Out-File -FilePath $logPath -Append -Encoding UTF8
-Write-Host "`nDrivers adicionados à driver store (se compatíveis)." -ForegroundColor Green
+Write-Host "`nDrivers added to the driver store (if compatible)." -ForegroundColor Green
 
-# Fim do log
+# End of the log
 "==== PROCESS END ($(Get-Date -Format "yyyy-MM-dd HH:mm:ss")) ====" | Out-File -FilePath $logPath -Append
