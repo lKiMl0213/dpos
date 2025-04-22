@@ -49,7 +49,8 @@ A comprehensive toolkit to automate system maintenance tasks such as driver upda
     ```powershell
     $networkPath = "\\path\to\network"
     ```
-
+3. **Download as ZIP**:  
+  - Alternatively, click on `Code > Download ZIP`, extract the contents, and run `AioTst.bat` or `test.bat`. Refer to the [Usage](#usage) section for more details.
 ---
 
 ## Prerequisites
