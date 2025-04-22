@@ -29,7 +29,7 @@ A comprehensive toolkit to automate system maintenance tasks such as driver upda
 
 1. **Clone the Repository**:
   ```bash
-  git clone https://github.com/yourusername/dpos-automation-toolkit.git
+  git clone https://github.com/lKiMl0213/dpos.git
   cd dpos-automation-toolkit
   ```
 
