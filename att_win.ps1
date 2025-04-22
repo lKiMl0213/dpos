@@ -1,0 +1,1 @@
+winget upgrade --all --silent --accept-source-agreements --force
