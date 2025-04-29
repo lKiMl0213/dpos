@@ -1,4 +1,5 @@
-$networkPath = "\\"  # Base path on the network
+$hostname = "HOSTNAME" # Replace with the actual hostname
+$networkPath = "\\$hostname\" # Replace with the actual network path or the location you want to save the file
 $mesAtual = Get-Date -Format "MMMM"  # Month name in full
 $dataAtual = Get-Date -Format "dd-MM-yyyy"  # Date in the desired format
 
