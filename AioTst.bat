@@ -11,15 +11,15 @@ echo The script will always run with administrator privileges.
 
 
 title AIO Tools
-mode con: cols=51 lines=13
+mode con: cols=76 lines=20
 cd /d "%~dp0"
 
 :MENU
 cls
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-"Write-Host '==================================================' -ForegroundColor Yellow; ^
- Write-Host '                AIO TOOLS' -ForegroundColor Yellow; ^
- Write-Host '==================================================' -ForegroundColor Yellow; ^
+"Write-Host '=====================================//=====================================' -ForegroundColor Yellow; ^
+ Write-Host '                                 AIO TOOLS' -ForegroundColor Yellow; ^
+ Write-Host '=====================================//=====================================' -ForegroundColor Yellow; ^
  Write-Host ''; ^
  Write-Host ' 1 - Execute All' -ForegroundColor Green; ^
  Write-Host ' 2 - Update Drivers (DPS) (Testing)' -ForegroundColor Green; ^
@@ -30,14 +30,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
  Write-Host ' 7 - Create Inventory' -ForegroundColor Green; ^
  Write-Host ' 8 - Windows Update (This option takes a long time)' -ForegroundColor Green; ^
  Write-Host ' 9 - Exit' -ForegroundColor Green; ^
- Write-Host ''"
-Write-Host ' ==================================================' -ForegroundColor Yellow
-Write-Host ''
-Write-Host ' Program created by: @lKiMl' -ForegroundColor Green
-Write-Host ' Version: 2.3          Release date: 16/05/2025' -ForegroundColor Green
-Write-Host ' GitHub: https://github.com/lKiMl0213/' -ForegroundColor Green
-Write-Host ' License: Free to use under open terms. Please keep author attribution.' -ForegroundColor Yellow
-Write-Host ' ==================================================' -ForegroundColor Yellow
+ Write-Host '=====================================//=====================================' -ForegroundColor Yellow; ^
+ Write-Host '                      Program created by: lKiMl' -ForegroundColor Green; ^
+ Write-Host '                  GitHub: https://github.com/lKiMl0213/' -ForegroundColor Green; ^
+ Write-Host '                 Version: 2.3 Release date: 16/05/2025' -ForegroundColor Green; ^
+ Write-Host '  License: Free to use under open terms. Please keep author attribution.' -ForegroundColor Green; ^
+ Write-Host '=====================================//=====================================' -ForegroundColor Yellow; ^
+Write-Host ''"
 set /p opcao=Choose an option:
 
 if "%opcao%"=="1" goto EXECUTE_ALL
