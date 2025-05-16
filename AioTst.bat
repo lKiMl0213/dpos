@@ -31,7 +31,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
  Write-Host ' 8 - Windows Update (This option takes a long time)' -ForegroundColor Green; ^
  Write-Host ' 9 - Exit' -ForegroundColor Green; ^
  Write-Host ''"
-
+Write-Host ' ==================================================' -ForegroundColor Yellow
+Write-Host ''
+Write-Host ' Program created by: @lKiMl' -ForegroundColor Green
+Write-Host ' Version: 2.3          Release date: 16/05/2025' -ForegroundColor Green
+Write-Host ' GitHub: https://github.com/lKiMl0213/' -ForegroundColor Green
+Write-Host ' License: Free to use under open terms. Please keep author attribution.' -ForegroundColor Yellow
+Write-Host ' ==================================================' -ForegroundColor Yellow
 set /p opcao=Choose an option:
 
 if "%opcao%"=="1" goto EXECUTE_ALL
